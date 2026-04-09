@@ -16,8 +16,8 @@ To eliminate the "Borrow Checker friction" and build a cemented mental model for
 
 | Day | Project | The Challenge | Technical Focus |
 |:--- |:--- |:--- |:--- |
-| **01** | [Hot Potato](./day01) | Ownership Handoff | Move semantics & Return-by-Value |
-| **02** | [Borrow Ledger](./day02) | The Reference Limit | Mutable vs Immutable scope control |
+| **01** | [Hot Potato](hot_potato) | Ownership Handoff | Move semantics & Return-by-Value |
+| **02** | [Borrow Ledger](bank_account) | The Reference Limit | Mutable vs Immutable scope control |
 | **03** | [Slice Parser](./day03) | Non-owning Views | String slices (`&str`) & Memory layout |
 | **04** | [Boxed List](./day04) | Heap Recursion | Recursive types & `Box<T>` |
 | **05** | [Shared State](./day05) | Multi-owner Data | `Rc<T>` and the limits of single-thread sharing |
