@@ -18,8 +18,8 @@ To eliminate the "Borrow Checker friction" and build a cemented mental model for
 |:--- |:--- |:--- |:--- |
 | **01** | [Hot Potato](hot_potato) | Ownership Handoff | Move semantics & Return-by-Value |
 | **02** | [Borrow Ledger](bank_account) | The Reference Limit | Mutable vs Immutable scope control |
-| **03** | [Slice Parser](./day03) | Non-owning Views | String slices (`&str`) & Memory layout |
-| **04** | [Boxed List](./day04) | Heap Recursion | Recursive types & `Box<T>` |
+| **03** | [Slice Parser](slice_parser) | Non-owning Views | String slices (`&str`) & Memory layout |
+| **04** | [Boxed List](recursive_box) | Heap Recursion | Recursive types & `Box<T>` |
 | **05** | [Shared State](./day05) | Multi-owner Data | `Rc<T>` and the limits of single-thread sharing |
 | **06** | [Lifetimes](./day06) | Scope Validation | Lifetime annotations (`'a`) |
 | **07** | [Interior Mutability](./day07) | Runtime Checking | `RefCell` and the "Escape Hatch" |
