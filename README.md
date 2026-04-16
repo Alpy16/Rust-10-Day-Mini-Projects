@@ -1,18 +1,18 @@
-# 🦀 10 Days of Rust Systems & Memory
+#  10 Days of Rust Systems & Memory
 
 This repository is a dedicated 10-day sprint to master the core of Rust: **Memory Management.** After building several functional projects (CLI tools, games, and persistent apps), I realized that the true power of Rust lies in its ability to handle data with surgical precision. This sprint is about moving away from "making it work" and moving toward "making it optimal."
 
-## 🎯 The Mission
+##  The Mission
 To eliminate the "Borrow Checker friction" and build a cemented mental model for how data lives, moves, and dies in a Rust program.
 
-## 🛠️ The Constraints
+##  The Constraints
 1. **Zero `.clone()`:** Data must be moved or borrowed. Cloning is treated as a last resort.
 2. **Explicit Lifetimes:** No dodging compiler errors with `static` or unnecessary heap allocations.
 3. **Performance First:** Favor stack allocation and references over heap-managed types where possible.
 
 ---
 
-## 📅 The Sprint Log
+##  The Sprint Log
 
 | Day | Project | The Challenge | Technical Focus |
 |:--- |:--- |:--- |:--- |
