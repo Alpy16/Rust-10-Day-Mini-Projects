@@ -21,7 +21,7 @@ To eliminate the "Borrow Checker friction" and build a cemented mental model for
 | **03** | [Slice Parser](slice_parser) | Non-owning Views | String slices (`&str`) & Memory layout |
 | **04** | [Boxed List](recursive_box) | Heap Recursion | Recursive types & `Box<T>` |
 | **05** | [Shared State](./shared_ownership) | Multi-owner Data | `Rc<T>` and the limits of single-thread sharing |
-| **06** | [Lifetimes](./day06) | Scope Validation | Lifetime annotations (`'a`) |
+| **06** | [Lifetimes](./username_validator) | Scope Validation | Lifetime annotations (`'a`) |
 | **07** | [Interior Mutability](./day07) | Runtime Checking | `RefCell` and the "Escape Hatch" |
 | **08** | [Zero-Copy Parser](./day08) | Zero-Allocation | Building structs that "borrow" their fields |
 | **09** | [Unsafe Peek](./day09) | Raw Pointers | Memory addresses & Byte-level inspection |
