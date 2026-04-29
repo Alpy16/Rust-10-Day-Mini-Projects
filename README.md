@@ -24,7 +24,7 @@ To eliminate the "Borrow Checker friction" and build a cemented mental model for
 | **06** | [Lifetimes](./username_validator) | Scope Validation | Lifetime annotations (`'a`) |
 | **07** | [Interior Mutability](./config_loader) | Runtime Checking | `RefCell` and the "Escape Hatch" |
 | **08** | [Zero-Copy Parser](./zero_copy_parser) | Zero-Allocation | Building structs that "borrow" their fields |
-| **09** | [Unsafe Peek](./day09) | Raw Pointers | Memory addresses & Byte-level inspection |
+| **09** | [Unsafe Peek](./transmute_offset) | Raw Pointers | Memory addresses & Byte-level inspection |
 | **10** | **Final: Optimized KV** | Systems Integration | Applying all concepts to a high-speed store |
 
 ---
