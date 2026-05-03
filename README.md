@@ -1,6 +1,6 @@
 #  10 Days of Rust Systems & Memory
 
-This repository is a dedicated 10-day sprint to master the core of Rust: **Memory Management.** After building several functional projects (CLI tools, games, and persistent apps), I realized that the true power of Rust lies in its ability to handle data with surgical precision. This sprint is about moving away from "making it work" and moving toward "making it optimal."
+This repository is a dedicated 10-day sprint to master the core of Rust: **Memory Management.** After building several functional projects (CLI tools, games, and persistent apps), I realized that the true power of Rust lies in its ability to handle data with surgical precision. This sprint is about moving away from "making apps" and moving toward "understanding how the system works."
 
 ##  The Mission
 To eliminate the "Borrow Checker friction" and build a cemented mental model for how data lives, moves, and dies in a Rust program.
