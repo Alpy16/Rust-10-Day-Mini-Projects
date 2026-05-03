@@ -77,11 +77,12 @@ accessed the heap.
 
 **********************************************************************
 
-If you dont wanna be like me and find out the hard way you can just use #[repr(C)] to recieve the data in the order of C programing language
+If you dont wanna be like me and find that out the hard way you can just use #[repr(C)] to recieve the data in the order of C programing language
 EDIT: nevermind apparently this only works for structs you define not for standart library stuff
 
 **********************************************************************
-Also i verified my unsafe code using Miri and discovered an 'Undefined Behavior' error related to Pointer Provenance. While the code executes correctly on hardware,
+Also i verified my unsafe code using Miri and discovered an 'Undefined Behavior' error related to Pointer Provenance.
+While the code executes correctly on hardware,
 Miri correctly identified that transmuting a pointer to a usize strips its metadata. But for todays lesson i will just call it a day
 
 
