@@ -74,37 +74,39 @@ fn main() {
         )
     };
     file.write_all(header_bytes).unwrap(); // physically push those 32 bytes onto the disk.
-    let header_bytes = unsafe {
-        std::slice::from_raw_parts(
-            &my_header as *const Header as *const u8,
-            std::mem::size_of::<Header>(),
-        )
-    };
 
     let index_bytes = unsafe {
+        // even though index_entries is a list (Vec), the entries are packed together in memory
+        // we point to the start of that list and tell Rust to treat the whole thing as a giant row of bytes
         std::slice::from_raw_parts(
-            index_entries.as_ptr() as *const u8, // Start at the beginning of the Vec
-            index_entries.len() * std::mem::size_of::<IndexEntry>(), // Total bytes to read
+            index_entries.as_ptr() as *const u8, // get the memory address of the first entry
+            index_entries.len() * std::mem::size_of::<IndexEntry>(), // calculate total bytes (entries * 24)
         )
     };
-    file.write_all(index_bytes).expect("Failed to write index");
+    file.write_all(index_bytes).expect("Failed to write index"); // save our "Table of Contents" to the file right after the header
+
+    // now we loop one last time to write the actual data blobs (the strings)
     for (_, value) in &raw_data {
-        // 1. Write the actual string bytes
+        // 1. write the actual string bytes to the file
         file.write_all(value).unwrap();
 
-        // 2. Write the PHYSICAL padding to match your index math
+        // 2. we must write physical "zeros" to the file to fill the gaps we calculated earlier
+        // if we skip this, our file will be shorter than our IndexEntry offsets expect!
         let remainder = value.len() % 8;
         if remainder != 0 {
             let padding_needed = 8 - remainder;
-            let padding = vec![0u8; padding_needed]; // Create a small slice of zeros
-            file.write_all(&padding).unwrap();
+            let padding = vec![0u8; padding_needed]; // create a temporary "bridge" of zero-bytes
+            file.write_all(&padding).unwrap(); // push the zeros to the disk so the next value starts on an 8-byte boundary
         }
     }
 }
+
 /*
 
+As you can see i used a lot of comments, thats because i am kinda learning on the go so i wanna make sure i understand and internalize the concept
 
-as you can see i used a lot of comments, because im kinda learning on the go aswell so it saves me the trouble to re-learn everytime i refactor
-or take another look at the code from previous days
+also helps other devs that might look at this to see what is going on
+
+also it helps if i have to come back to this code in the future, build on it or even refactor it
 
 */
